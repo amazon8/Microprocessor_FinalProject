@@ -1,0 +1,8 @@
+osource "/Users/home/Downloads/LEDMatrix_1/boards/shields/*/Kconfig.defconfig"
+osource "/Users/home/Desktop/ncs/v2.5.0/zephyr/samples/drivers/led_ws2812/boards/shields/*/Kconfig.defconfig"
+osource "/Users/home/Downloads/led_ws2812_original/boards/shields/*/Kconfig.defconfig"
+osource "/Users/home/Downloads/timer/boards/shields/*/Kconfig.defconfig"
+osource "/Users/home/Downloads/encoder/boards/shields/*/Kconfig.defconfig"
+osource "/Users/home/Downloads/intergrate_led_encdoder/boards/shields/*/Kconfig.defconfig"
+osource "/Users/home/Downloads/rgb_led/boards/shields/*/Kconfig.defconfig"
+osource "/Users/home/Desktop/ncs/v2.5.0/nrf/boards/shields/*/Kconfig.defconfig"
