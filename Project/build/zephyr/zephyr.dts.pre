@@ -1168,11 +1168,25 @@ zephyr_udc0: &usbd {
  status = "okay";
 };
 # 0 "<command-line>" 2
-# 1 "c:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay" 1
-# 15 "c:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay"
+# 1 "C:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay" 1
+# 15 "C:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay"
 / {
  zephyr,user {
         io-channels = <&adc 4>;
+ };
+
+ aliases {
+  qdec0 = &qdec0;
+  gpio-sw = &gpiosw;
+ };
+
+ gpiocustom{
+  status = "okay";
+  compatible = "gpio-keys";
+  gpiosw: gpiosw {
+   gpios = <&gpio1 5 ((1 << 4))>;
+   label = "gpiosw P1.05";
+  };
  };
 };
 
@@ -1189,6 +1203,24 @@ zephyr_udc0: &usbd {
   zephyr,resolution = <10>;
  };
 };
+
+&pinctrl {
+ qdec_pinctrl: qdec_pinctrl {
+  group1 {
+   psels = <((((((1) * 32U) + (4)) & 0x7FU) << 0U) | ((26U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (3)) & 0x7FU) << 0U) | ((27U & 0xFFFFU) << 16U))>;
+  };
+ };
+};
+
+&qdec0 {
+ status = "okay";
+ pinctrl-0 = <&qdec_pinctrl>;
+ pinctrl-names = "default";
+ steps = < 20 >;
+ led-pre = < 500 >;
+};
+
 
 &i2c0 {
  clock-frequency = <100000>;

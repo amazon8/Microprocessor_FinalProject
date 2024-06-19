@@ -16,6 +16,20 @@
 	zephyr,user {
         io-channels = <&adc 4>;
 	};
+
+	aliases {
+		qdec0 = &qdec0;
+		gpio-sw = &gpiosw;
+	};
+
+	gpiocustom{
+		status = "okay";
+		compatible = "gpio-keys";
+		gpiosw: gpiosw {
+			gpios = <&gpio1 5 (GPIO_PULL_UP)>;
+			label = "gpiosw P1.05";
+		};
+	};
 };
 
 &adc {
@@ -31,6 +45,24 @@
 		zephyr,resolution = <10>;
 	};
 };
+
+&pinctrl {
+	qdec_pinctrl: qdec_pinctrl {
+		group1 {
+			psels = <NRF_PSEL(QDEC_A, 1, 4)>,   /* Arduino D3 */
+				<NRF_PSEL(QDEC_B, 1, 3)>;   /* Arduino D2 */
+		};
+	};
+};
+
+&qdec0 {
+	status = "okay";
+	pinctrl-0 = <&qdec_pinctrl>;
+	pinctrl-names = "default";
+	steps = < 20 >;
+	led-pre = < 500 >;
+};
+
 
 &i2c0 {
 	clock-frequency = <I2C_BITRATE_STANDARD>;
