@@ -1,8 +1,8 @@
-# Install script for directory: /Users/home/Desktop/ncs/v2.5.0/zephyr/subsys
+# Install script for directory: C:/ncs/zephyr/subsys
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/opt/nordic/ncs/toolchains/20d68df7e5")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/Zephyr-Kernel")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,101 +34,106 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/opt/nordic/ncs/toolchains/20d68df7e5/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
+  set(CMAKE_OBJDUMP "C:/ncs/toolchains/c57af46cb7/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/canbus/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/canbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/debug/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/debug/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/fb/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/fb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/fs/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/fs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/ipc/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/ipc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/logging/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/logging/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/mgmt/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/mem_mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/modbus/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/pm/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/modbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/portability/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/pm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/random/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/portability/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/rtio/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/random/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/sd/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/rtio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/stats/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/sd/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/storage/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/stats/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/task_wdt/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/storage/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/testsuite/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/task_wdt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/tracing/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/testsuite/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/subsys/usb/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/tracing/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/subsys/usb/cmake_install.cmake")
 endif()
 

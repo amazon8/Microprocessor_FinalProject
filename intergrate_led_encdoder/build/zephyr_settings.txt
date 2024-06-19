@@ -6,6 +6,11 @@
 # and/or the west manifest file.
 #
 # See the Modules guide for more information.
-"BOARD_ROOT":"/Users/home/Desktop/ncs/v2.5.0/nrf"
-"DTS_ROOT":"/Users/home/Desktop/ncs/v2.5.0/nrf"
-"MODULE_EXT_ROOT":"/Users/home/Desktop/ncs/v2.5.0/nrf"
+"DTS_ROOT":"C:/ncs/modules/hal/adi"
+"DTS_ROOT":"C:/ncs/modules/hal/atmel"
+"DTS_ROOT":"C:/ncs/modules/hal/espressif"
+"DTS_ROOT":"C:/ncs/modules/hal/gigadevice"
+"DTS_ROOT":"C:/ncs/modules/hal/microchip"
+"DTS_ROOT":"C:/ncs/modules/hal/nuvoton"
+"DTS_ROOT":"C:/ncs/modules/hal/nxp"
+"DTS_ROOT":"C:/ncs/modules/hal/stm32"
