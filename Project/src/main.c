@@ -44,22 +44,6 @@ void sw_callback(const struct device *dev, struct gpio_callback *cb, uint32_t pi
 	sw_led_flag = !sw_led_flag;
 }
 
-void display_rotary_led(int32_t rotary_val)
-{
-	if(rotary_val > 0){
-		seconds++;
-		printk("encdoer up\n");
-		led_on_seconds(seconds);
-		int bpm_interval = (int)(60000.0 / seconds);
-		// k_timer_start(&my_timer, K_MSEC(bpm_interval), K_MSEC(bpm_interval));
-	} else if(rotary_val < 0){
-		seconds--;
-		printk("encdoer down\n");
-		led_on_seconds(seconds);
-		int bpm_interval = (int)(60000.0 / seconds);
-		// k_timer_start(&my_timer, K_MSEC(bpm_interval), K_MSEC(bpm_interval));
-	}
-}
 
 // #include "led.h"
 #if !DT_NODE_EXISTS(DT_PATH(zephyr_user)) || \
@@ -84,13 +68,6 @@ long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-
-
-
-
-
-
-
 
 
 struct k_timer my_timer;
@@ -180,7 +157,6 @@ void adc_read_work_handler(struct k_work *work)
         return;
     }
 
-    bool checkFlag = isChange();
 
     if (nowX == ADC_MAX && nowY == ADC_MAX) {
         status = 0;
@@ -196,16 +172,16 @@ void adc_read_work_handler(struct k_work *work)
     printk("\n");
 
     if (status == 1) {
-        if (level == 3) level++;
+        if (level < 4) level++;
     }
     else if (status == 2) {
-        if (level == 4) level--;
+        if (level > 2) level--;
     }
     else if (status == 3) {
-        if (level == 4) level--;
+        if (level > 2) level--;
     }
     else if (status == 4) {
-        if (level == 3) level++;
+        if (level < 4) level++;
     }
 
     printk("status : %d, level : %d\n", status, level);
@@ -218,26 +194,67 @@ void my_timer1_handler(struct k_timer *dummy)
 
 void my_work_handler(struct k_work *work)
 {
-    printk("beat: %d\n", beat_count);
 
-    // Display the time on the battery display
-    if (beat_count == 0) {
-        display_level(0);
-    } else if (beat_count == 1) {
-        display_level(1); // 빨간
-    } else if (beat_count == 2) {
-        display_level(3); // 주황
-    } else if (beat_count == 3) {
-        display_level(5); // 초록
-    } else {
-        display_level(7); // 파랑
-    }
 
-    // Increment the beat
-    beat_count = beat_count +1;
-    if (beat_count > 3) {
-        beat_count = 0;
-    }
+	if (level == 4) {
+      if (beat_count == 0) {
+         display_level(1);
+      } else if (beat_count == 1) {
+         display_level(4);
+      } else if (beat_count == 2) {
+         display_level(6);
+      } else if (beat_count == 3) {
+         display_level(7);
+      }
+
+      beat_count = beat_count +1;
+      if (beat_count >= 3) {
+         beat_count = 0;
+      }
+   }
+   else if(level == 3) {
+      if (beat_count == 0) {
+         display_level(2);
+      } else if (beat_count == 1) {
+         display_level(5);
+      } else if (beat_count == 2) {
+         display_level(7);
+      }
+
+      beat_count = beat_count +1;
+      if (beat_count >= 2) {
+         beat_count = 0;
+      }
+   }
+   else if(level == 2) {
+      if (beat_count == 0) {
+         display_level(4);
+      } else if (beat_count == 1) {
+         display_level(7);
+      }
+
+      beat_count = beat_count +1;
+      if (beat_count >= 1) {
+         beat_count = 0;
+      }
+   }
+}
+
+void display_rotary_led(int32_t rotary_val)
+{
+	if(rotary_val > 0){
+		seconds++;
+		printk("encdoer up\n");
+		led_on_seconds(seconds);
+		int bpm_interval = (int)(60000.0 / seconds);
+		k_timer_start(&my_timer, K_MSEC(bpm_interval), K_MSEC(bpm_interval));
+	} else if(rotary_val < 0){
+		seconds--;
+		printk("encdoer down\n");
+		led_on_seconds(seconds);
+		int bpm_interval = (int)(60000.0 / seconds);
+		k_timer_start(&my_timer, K_MSEC(bpm_interval), K_MSEC(bpm_interval));
+	}
 }
 
 K_WORK_DEFINE(my_work, my_work_handler);
@@ -263,7 +280,6 @@ int main(void)
 	int bpm = 0;
 
 
-        // printk("Sound Sensor : array_size [%d]\n", ARRAY_SIZE(adc_channels));
 	/* Configure channels individually prior to sampling. */
 	for (size_t i = 0U; i < ARRAY_SIZE(adc_channels); i++) {
 		if (!adc_is_ready_dt(&adc_channels[i])) {
@@ -279,8 +295,6 @@ int main(void)
 	}
 
 	
-
-
 
 	struct sensor_value val;
 	int rc;
@@ -331,7 +345,9 @@ int main(void)
         return DK_ERR;
     }
 
-
+	// k_work_init(&my_work1, adc_read_work_handler);
+    // k_timer_init(&my_timer1, my_timer1_handler, NULL);
+    // k_timer_start(&my_timer1, K_MSEC(200), K_MSEC(200));
 
 	while (1) {
 
@@ -353,7 +369,7 @@ int main(void)
 			sound_level = map(sound_value, 0, MAX_SENSORVALUE, 0, MIN_SENSORVALUE);
 
 			
-			if(sound_level > 400 && isClear == true){
+			if(sound_level > 500 && isClear == true){
 				isClear = false;
 
 				curr_timestamp = k_uptime_get_32();
@@ -375,7 +391,7 @@ int main(void)
 				printk("Count : %u \n", count++);
 				printk("sound_value: %" PRIu32 " sound_level : %d\n", sound_value, sound_level);
 			}
-			else if (sound_level < 30){
+			else if (sound_level < 100){
 				isClear = true;
 			}
 		}

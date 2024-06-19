@@ -1168,8 +1168,8 @@ zephyr_udc0: &usbd {
  status = "okay";
 };
 # 0 "<command-line>" 2
-# 1 "C:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay" 1
-# 15 "C:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay"
+# 1 "c:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay" 1
+# 15 "c:/ncs/myapps/Project/boards/nrf52840dk_nrf52840.overlay"
 / {
  zephyr,user {
         io-channels = <&adc 4>;
