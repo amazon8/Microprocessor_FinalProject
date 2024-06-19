@@ -1178,6 +1178,8 @@ zephyr_udc0: &usbd {
  aliases {
   qdec0 = &qdec0;
   gpio-sw = &gpiosw;
+  gpio-clk = &gpioclk;
+  gpio-dio = &gpiodio;
  };
 
  gpiocustom{
@@ -1187,7 +1189,22 @@ zephyr_udc0: &usbd {
    gpios = <&gpio1 5 ((1 << 4))>;
    label = "gpiosw P1.05";
   };
+
+  gpioclk: gpioclk{
+   gpios = <&gpio1 12 (0 << 0)>;
+   label = "gpioclk P1.12";
+  };
+
+  gpiodio: gpiodio{
+   gpios = <&gpio1 13 (0 << 0)>;
+   label = "gpiodio P1.13";
+  };
  };
+
+};
+
+&spi3 {
+ status = "disabled";
 };
 
 &adc {
@@ -1221,6 +1238,31 @@ zephyr_udc0: &usbd {
  led-pre = < 500 >;
 };
 
+
+&adc {
+ #address-cells = <1>;
+ #size-cells = <0>;
+
+ channel@1 {
+  reg = <1>;
+  zephyr,gain = "ADC_GAIN_1";
+  zephyr,reference = "ADC_REF_INTERNAL";
+  zephyr,acquisition-time = <0>;
+  zephyr,input-positive = <2>;
+  zephyr,resolution = <10>;
+
+ };
+
+ channel@2 {
+  reg = <2>;
+  zephyr,gain = "ADC_GAIN_1";
+  zephyr,reference = "ADC_REF_INTERNAL";
+  zephyr,acquisition-time = <0>;
+  zephyr,input-positive = <3>;
+  zephyr,resolution = <10>;
+
+ };
+};
 
 &i2c0 {
  clock-frequency = <100000>;

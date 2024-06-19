@@ -35,6 +35,8 @@
 		spi-flash0 = &mx25r64;
 		qdec0 = &qdec0;
 		gpio-sw = &gpiosw;
+		gpio-clk = &gpioclk;
+		gpio-dio = &gpiodio;
 	};
 	soc {
 		#address-cells = < 0x1 >;
@@ -207,6 +209,22 @@
 				zephyr,reference = "ADC_REF_INTERNAL";
 				zephyr,acquisition-time = < 0x0 >;
 				zephyr,input-positive = < 0x5 >;
+				zephyr,resolution = < 0xa >;
+			};
+			channel@1 {
+				reg = < 0x1 >;
+				zephyr,gain = "ADC_GAIN_1";
+				zephyr,reference = "ADC_REF_INTERNAL";
+				zephyr,acquisition-time = < 0x0 >;
+				zephyr,input-positive = < 0x2 >;
+				zephyr,resolution = < 0xa >;
+			};
+			channel@2 {
+				reg = < 0x2 >;
+				zephyr,gain = "ADC_GAIN_1";
+				zephyr,reference = "ADC_REF_INTERNAL";
+				zephyr,acquisition-time = < 0x0 >;
+				zephyr,input-positive = < 0x3 >;
 				zephyr,resolution = < 0xa >;
 			};
 		};
@@ -531,7 +549,7 @@
 			easydma-maxcnt-bits = < 0x10 >;
 			rx-delay-supported;
 			rx-delay = < 0x2 >;
-			status = "okay";
+			status = "disabled";
 			cs-gpios = < &arduino_header 0x10 0x1 >;
 			pinctrl-0 = < &spi3_default >;
 			pinctrl-1 = < &spi3_sleep >;
@@ -820,6 +838,14 @@
 		gpiosw: gpiosw {
 			gpios = < &gpio1 0x5 0x10 >;
 			label = "gpiosw P1.05";
+		};
+		gpioclk: gpioclk {
+			gpios = < &gpio1 0xc 0x0 >;
+			label = "gpioclk P1.12";
+		};
+		gpiodio: gpiodio {
+			gpios = < &gpio1 0xd 0x0 >;
+			label = "gpiodio P1.13";
 		};
 	};
 };
