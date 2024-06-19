@@ -1,0 +1,3 @@
+osource "c:/ncs/myapps/led_ws2812/boards/shields/*/Kconfig.defconfig"
+osource "c:/ncs/myapps/project/boards/shields/*/Kconfig.defconfig"
+osource "C:/ncs/v2.5.0/nrf/boards/shields/*/Kconfig.defconfig"
