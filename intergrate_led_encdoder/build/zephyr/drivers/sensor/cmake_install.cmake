@@ -1,8 +1,8 @@
-# Install script for directory: /Users/home/Desktop/ncs/v2.5.0/zephyr/drivers/sensor
+# Install script for directory: C:/ncs/zephyr/drivers/sensor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/opt/nordic/ncs/toolchains/20d68df7e5")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/Zephyr-Kernel")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,16 +34,121 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/opt/nordic/ncs/toolchains/20d68df7e5/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
+  set(CMAKE_OBJDUMP "C:/ncs/toolchains/c57af46cb7/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/drivers/sensor/qdec_nrfx/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/adi/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/home/Downloads/intergrate_led_encdoder/build/zephyr/drivers/sensor/nrf5/cmake_install.cmake")
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/ams/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/aosong/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/asahi_kasei/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/bosch/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/espressif/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/honeywell/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/infineon/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/ite/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/maxim/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/meas/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/microchip/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/nordic/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/nuvoton/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/nxp/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/rohm/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/seeed/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/sensirion/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/silabs/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/st/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/ti/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/vishay/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/ncs/myapps/FinalProject/intergrate_led_encdoder/build/zephyr/drivers/sensor/wsen/cmake_install.cmake")
 endif()
 
